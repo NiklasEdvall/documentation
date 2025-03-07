@@ -1,0 +1,2266 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Set-up-FieldTrip-on-Compute/">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.7">
+    
+    
+      
+        <title>General - Centre for Imaging Research (CIR)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8608ea7d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tips-for-writing-useful-analysis-scripts" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Centre for Imaging Research (CIR)" class="md-header__button md-logo" aria-label="Centre for Imaging Research (CIR)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Centre for Imaging Research (CIR)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              General
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/natmegsweden/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Show on GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Centre for Imaging Research (CIR)" class="md-nav__button md-logo" aria-label="Centre for Imaging Research (CIR)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Centre for Imaging Research (CIR)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/natmegsweden/documentation" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Show on GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    NatMEG
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            NatMEG
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about-NatMEG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Preparation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Preparation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Electrodes-standard-setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Apply electrodes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Digitization-hpi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Digitization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    SQUID Acquisition
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            SQUID Acquisition
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/TRIUX-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    About TRIUX
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Acquisition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acquisition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Tuning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tuning channels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Check-channels/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Check channels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/EEG-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EEG
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Biochannels-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bio channels
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Lab-notebook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lab notebook
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/OPM-Acquisition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OPM Acquisition
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Stimulus Equipment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Stimulus Equipment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_1" id="__nav_2_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Audio
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Audio
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Audio-mixer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Audio mixer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Speakers-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Speakers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Soundtubes-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sound tubes
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Audiofile-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Audio file
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Behringer-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Behringer interface
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/B%26K-sound-level-meter-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    B&K sound level
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_2" id="__nav_2_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Visual
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Visual
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Screen-and-projector/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Screen and Projector
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_5_3" id="__nav_2_5_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Pleasant-touch-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pleasant touch
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Tactile-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tactile stimulator
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/ENS-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Electric nerve stimulation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Mechanical-pain-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mechanical pain
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Olfaction-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Olfactometer
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../test_new/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    New test-page
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Response Equipment
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Response Equipment
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Eye-tracker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Eye-tracker
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Presentation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentation
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Presentation-script-tips/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Presentation tips
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_7_3" id="__nav_2_7_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Presentation examples
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            Presentation examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Presentation-code-example-Auditory-oddball-paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Auditory oddball
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Presentation%E2%80%90code%E2%80%90example%E2%80%90Resting%E2%80%90state%E2%80%90paradigm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Resting state
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Triggers-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triggers
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Other
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Other
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/File-naming/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File naming
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Beyond-compare/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Beyond compare
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Maxfilter/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Maxfilter
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/MSR-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    MSR
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Monitors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monitors
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lab/Acoustic-panels-specs/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acoustic-panels-specs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Server
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Server
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Set-up connection
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            Set-up connection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Connect-to-Archive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to Archive
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Connect-to-Storage/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to Storate
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Connect-to-Compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Connect to Compute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Close-VNC-connection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Close VNC connection
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Install software
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Install software
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Set-up-MNE-Python-on-Compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set-up MNE on Compute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Set-up-FieldTrip-on-Compute/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set-up FieldTrip on Compute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Guide-for-setting-up-Freesurfer-on-Compute.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Set-up FreeSurfer on Compute
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Analysis
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    General
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment your code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-section-breaks-when-testing-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use section breaks when testing code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-paths-and-toolboxes-at-the-beginning-of-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the paths and toolboxes at the beginning of the script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-data-separate-by-subject-and-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store data separate by subject and session
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-paths-and-subject-names-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify paths and subject names once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ask-for-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ask for help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#comment-your-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comment your code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#use-section-breaks-when-testing-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Use section breaks when testing code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#define-the-paths-and-toolboxes-at-the-beginning-of-the-script" class="md-nav__link">
+    <span class="md-ellipsis">
+      Define the paths and toolboxes at the beginning of the script
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#store-data-separate-by-subject-and-session" class="md-nav__link">
+    <span class="md-ellipsis">
+      Store data separate by subject and session
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specify-paths-and-subject-names-once" class="md-nav__link">
+    <span class="md-ellipsis">
+      Specify paths and subject names once
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ask-for-help" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ask for help
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/natmegsweden/documentation/blob/main/docs/natmeg/server/tutorial_00_tips_for_writing_scripts.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/natmegsweden/documentation/raw/main/docs/natmeg/server/tutorial_00_tips_for_writing_scripts.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="tips-for-writing-useful-analysis-scripts">Tips for writing useful analysis scripts</h1>
+<p>Writing data analysis scripts can quickly become a mess! There are many steps to go from raw MEG/EEG data to the final results. It is essential to keep track of what processing step that goes before and after another. Know what data that should be read in one step, saved to memory, and then read in the next step. If we mess this up, we might end up with invalid results. And it is easy to  make errors: read the wrong data files, using different versions of toolboxes, working in the wrong directory, etc., especially in MEG/EEG data processing where there are several manual steps and we often have to go back to re-run analysis.</p>
+<p>Below you find a quick list of recommendations to make it easier for you to write useful analysis scripts. The recommendations are based on van Vliet (2020)[^1] and the MEG-BIDS guidelines[^2]. I recommend that you take a look at these when you have to write your own analysis scripts.</p>
+<h2 id="comment-your-code">Comment your code</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="comment-your-code-matlab" name="__tabbed_1" type="radio" /><input id="comment-your-code-python" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="comment-your-code-matlab">MATLAB</label><label for="comment-your-code-python">Python</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In MATLAB you write comments with the percentage symbol <code>%</code>. Use this to write short explanations of what section or even single lines of code in your scripts do.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="c">%% Calculate PSD: multitaper</span>
+<span class="w">    </span><span class="n">cfg</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[];</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">output</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;pow&#39;</span><span class="p">;</span><span class="w">          </span><span class="c">% Return PSD</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">channel</span><span class="w">   </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;all&#39;</span><span class="p">;</span><span class="w">          </span><span class="c">% Calculate for all channels</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">method</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;mtmfft&#39;</span><span class="p">;</span><span class="w">       </span><span class="c">% Use multitaper FFT</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">taper</span><span class="w">     </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;dpss&#39;</span><span class="p">;</span><span class="w">         </span><span class="c">% Multitapers based on Slepian sequences</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">tapsmofrq</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span><span class="w">              </span><span class="c">% Smoothing +/- 2 Hz</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">foilim</span><span class="w">    </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="w"> </span><span class="mi">95</span><span class="p">];</span><span class="w">         </span><span class="c">% Frequency 1 to 95 Hz</span>
+<span class="w">    </span><span class="n">cfg</span><span class="p">.</span><span class="n">pad</span><span class="w">       </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;nextpow2&#39;</span><span class="p">;</span><span class="w">     </span><span class="c">% Padding option</span>
+<span class="w">    </span><span class="n">psd_dpss</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">ft_freqanalysis</span><span class="p">(</span><span class="n">cfg</span><span class="p">,</span><span class="w"> </span><span class="n">epochs</span><span class="p">);</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>In Python you write comments with the hash-tag symbol <code>#</code>. Use this to write short explanations of what section or even single lines of code in your scripts do.</p>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>    <span class="c1"># like this</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    You can also add longer segments of text that should not be treated as code, but as plain text like this.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>There are several reasons why you should comment your scripts. The first reason is that it makes it much easier to go back to your old scripts and know what they are supposed to do. What is self-evident when you first write your code might not be evident years later. The time you spent on writing comments in your code will come back later. The second reason for commenting your code is the usefulness if you are part of collaboration where you have to share data and scripts. What is self-evident for you might not be evident for other people. The third reason is that there is an increase in demand for sharing analysis scripts when publishing scientific articles, either for review purposes or demand by publishers that it has to be made available upon publication. Make it easier for the reviewers to understand what you are doing with your data. And finally, writing what the code is supposed to do helps you identify code that is not working correctly.</p>
+<h2 id="use-section-breaks-when-testing-code">Use section breaks when testing code</h2>
+<p>When writing code you often want to run only a small snip of code, e.g. when you test your code while scripting.</p>
+<p>If you only want to run parts of your script, you can mark code and select <code>run selection</code> or press <code>F9</code>. However, constantly marking code manually becomes annoying, really fast. Instead, use section breaks. You start a section with <code>%%</code> (two percentage signs). The line is commented, and you will notice that the section is highlighted in a yellowish colour. If you now press <code>ctrl+enter</code> you will run the code in the highlighted section.</p>
+<div class="highlight"><pre><span></span><code><span class="c">%% Make a section</span>
+<span class="n">x</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="mi">10</span><span class="p">;</span>
+<span class="n">y</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">rand</span><span class="p">(</span><span class="nb">size</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+
+<span class="c">%% Make a new section</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;or&#39;</span><span class="p">)</span>
+</code></pre></div>
+<h2 id="define-the-paths-and-toolboxes-at-the-beginning-of-the-script">Define the paths and toolboxes at the beginning of the script</h2>
+<p>For this tutorial, you will use the toolbox FieldTrip to analyses MEG/EEG data. FieldTrip is written in MATLAB but is not a part of MATLAB. We , therefore, need to make sure that MATLAB has FieldTrip in its PATH definition to use the functions. The same applies if you use other toolboxes. This is simple: simply use the MATLAB function  <code>addpath( ... )</code> to add the path where you downloaded FieldTrip. If you have several versions of FieldTrip or have used other toolboxes before you run this script, it is also a good idea to restore the PATH with the function <code>resotredefaultpath</code></p>
+<p>The start of my script may look like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nb">restoredefaultpath</span>
+<span class="nb">addpath</span><span class="p">(</span><span class="s">&#39;/home/mikkel/fieldtrip&#39;</span><span class="p">)</span><span class="w">       </span><span class="c">% Change to your path</span>
+<span class="n">ft_defaults</span>
+</code></pre></div>
+<p>If you have several variables with the same names, it might also be good to add the following before the above code, to clear all figures and variables from your workspace.
+<div class="highlight"><pre><span></span><code><span class="nb">close</span><span class="w"> </span><span class="nb">all</span><span class="w">       </span><span class="c">% Close all open windows</span>
+<span class="nb">clear</span><span class="w"> </span><span class="nb">all</span><span class="w">       </span><span class="c">% Clear all variables from the workspace</span>
+````
+<span class="n">After</span><span class="w"> </span><span class="s">this,</span><span class="w"> </span><span class="s">we</span><span class="w"> </span><span class="s">are</span><span class="w"> </span><span class="s">ready</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">begin</span><span class="w"> </span><span class="s">our</span><span class="w"> </span><span class="s">script,</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">we</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">use</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">version</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">FieldTrip</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">we</span><span class="w"> </span><span class="s">know</span><span class="w"> </span><span class="s">we</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">at</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">given</span><span class="w"> </span><span class="s">location.</span>
+
+##<span class="w"> </span><span class="n">Run</span><span class="w"> </span><span class="nb">all</span><span class="w"> </span><span class="n">analysis</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="nb">version</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">software</span>
+<span class="n">Toolboxes</span><span class="w"> </span><span class="s">for</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">analysis</span><span class="w"> </span><span class="s">gets</span><span class="w"> </span><span class="s">updated</span><span class="w"> </span><span class="s">regularly.</span><span class="w"> </span><span class="s">FieldTrip,</span><span class="w"> </span><span class="s">for</span><span class="w"> </span><span class="s">example,</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">updated</span><span class="w"> </span><span class="s">with</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">new</span><span class="w"> </span><span class="s">version</span><span class="w"> </span><span class="s">daily</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">keep</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">functionality</span><span class="w"> </span><span class="s">up</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">date</span><span class="w"> </span><span class="s">or</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">fix</span><span class="w"> </span><span class="s">bugs</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">code</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">users</span><span class="w"> </span><span class="s">might</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">occurred.</span><span class="w"> </span><span class="s">However,</span><span class="w"> </span><span class="s">do</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">update</span><span class="w"> </span><span class="s">FieldTrip</span><span class="w"> </span><span class="s">daily!</span><span class="w"> </span><span class="s">When</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">begin</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">project,</span><span class="w"> </span><span class="s">make</span><span class="w"> </span><span class="s">sure</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">all</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">processed</span><span class="w"> </span><span class="s">with</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">same</span><span class="w"> </span><span class="s">version</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">software</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">use.</span><span class="w"> </span><span class="s">If</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">need</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">update</span><span class="w"> </span><span class="s">(which</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">sometimes</span><span class="w"> </span><span class="s">need</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">do)</span><span class="w"> </span><span class="s">make</span><span class="w"> </span><span class="s">sure</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">your</span><span class="w"> </span><span class="s">code</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">backwards</span><span class="w"> </span><span class="s">compatible</span><span class="w"> </span><span class="s">with</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">updated</span><span class="w"> </span><span class="s">toolbox.</span><span class="w"> </span><span class="s">If</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">need</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">update,</span><span class="w"> </span><span class="s">better</span><span class="w"> </span><span class="s">re-run</span><span class="w"> </span><span class="s">everything.</span>
+
+<span class="n">If</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">many</span><span class="w"> </span><span class="s">ongoing</span><span class="w"> </span><span class="s">projects,</span><span class="w"> </span><span class="s">it</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">useful</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">several</span><span class="w"> </span><span class="s">versions</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">make</span><span class="w"> </span><span class="s">sure</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">use</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">same</span><span class="w"> </span><span class="s">versions</span><span class="w"> </span><span class="s">for</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">project.</span>
+
+##<span class="w"> </span><span class="n">One</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">data</span><span class="w"> </span><span class="n">processing</span><span class="w"> </span><span class="nb">step</span>
+<span class="n">It</span><span class="w"> </span><span class="s">might</span><span class="w"> </span><span class="s">seem</span><span class="w"> </span><span class="s">like</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">good</span><span class="w"> </span><span class="s">idea</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">one</span><span class="w"> </span><span class="s">big</span><span class="w"> </span><span class="s">script</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">only</span><span class="w"> </span><span class="s">have</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">run</span><span class="w"> </span><span class="s">once</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">go</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">raw</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">finished</span><span class="w"> </span><span class="s">result.</span><span class="w"> </span><span class="s">It</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">not!</span><span class="w"> </span><span class="s">It</span><span class="w"> </span><span class="s">only</span><span class="w"> </span><span class="s">makes</span><span class="w"> </span><span class="s">it</span><span class="w"> </span><span class="s">difficult</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">find</span><span class="w"> </span><span class="s">bugs</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">errors.</span><span class="w"> </span><span class="s">Instead,</span><span class="w"> </span><span class="s">try</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">follow</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">principle:</span>
+
+<span class="o">&gt;</span><span class="w"> </span><span class="o">**</span><span class="n">one</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">one</span><span class="w"> </span><span class="n">analysis</span><span class="w"> </span><span class="nb">step</span><span class="o">**</span>
+
+<span class="n">For</span><span class="w"> </span><span class="s">example,</span><span class="w"> </span><span class="s">one</span><span class="w"> </span><span class="s">script</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">import</span><span class="w"> </span><span class="s">raw</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">disc,</span><span class="w"> </span><span class="s">does</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">pre-processing,</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">then</span><span class="w"> </span><span class="s">save</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">processed</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">script.</span><span class="w"> </span><span class="s">You</span><span class="w"> </span><span class="s">can</span><span class="w"> </span><span class="s">then</span><span class="w"> </span><span class="s">easily</span><span class="w"> </span><span class="s">name</span><span class="w"> </span><span class="s">your</span><span class="w"> </span><span class="s">scripts</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">order</span><span class="w"> </span><span class="s">they</span><span class="w"> </span><span class="s">should</span><span class="w"> </span><span class="s">run</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">call</span><span class="w"> </span><span class="s">them</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">master</span><span class="w"> </span><span class="s">script,</span><span class="w"> </span><span class="s">e.g.:</span>
+
+````<span class="n">bash</span>
+<span class="n">S01_import_data</span><span class="p">.</span><span class="n">m</span>
+<span class="n">S02_run_ica</span><span class="p">.</span><span class="n">m</span>
+<span class="n">S03_evoked_analysis</span><span class="p">.</span><span class="n">m</span>
+<span class="n">S04_source_analysis</span><span class="p">.</span><span class="n">m</span>
+<span class="n">S05_statistics</span><span class="p">.</span><span class="n">m</span>
+<span class="k">...</span>
+````
+
+##<span class="w"> </span><span class="n">Save</span><span class="w"> </span><span class="n">intermediate</span><span class="w"> </span><span class="n">results</span>
+<span class="n">Save</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">after</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">processing</span><span class="w"> </span><span class="s">step.</span><span class="w"> </span><span class="s">For</span><span class="w"> </span><span class="s">example,</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">script</span><span class="w"> </span><span class="s">above</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">save</span><span class="w"> </span><span class="s">output</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">disk.</span><span class="w"> </span><span class="s">Then</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">next</span><span class="w"> </span><span class="s">step</span><span class="w"> </span><span class="s">then</span><span class="w"> </span><span class="s">reads</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">output</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">previous</span><span class="w"> </span><span class="s">step.</span><span class="w"> </span><span class="s">Especially</span><span class="w"> </span><span class="s">before</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">after</span><span class="w"> </span><span class="s">steps</span><span class="w"> </span><span class="s">that</span><span class="w"> </span><span class="s">require</span><span class="w"> </span><span class="s">manual</span><span class="w"> </span><span class="s">intervention.</span><span class="w"> </span><span class="s">This</span><span class="w"> </span><span class="s">makes</span><span class="w"> </span><span class="s">it</span><span class="w"> </span><span class="s">easier</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">go</span><span class="w"> </span><span class="s">back</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">redo</span><span class="w"> </span><span class="s">individual</span><span class="w"> </span><span class="s">steps</span><span class="w"> </span><span class="s">without</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">need</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">re-run</span><span class="w"> </span><span class="s">everything</span><span class="w"> </span><span class="s">again.</span>
+
+##<span class="w"> </span><span class="n">Visualize</span><span class="w"> </span><span class="n">results</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">intermediate</span><span class="w"> </span><span class="n">processing</span><span class="w"> </span><span class="n">steps</span>
+<span class="n">Thought</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">tutorial</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">will</span><span class="w"> </span><span class="s">be</span><span class="w"> </span><span class="s">asked</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">lot</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">plot</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">inspect</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">structures.</span><span class="w"> </span><span class="s">This</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">just</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">keep</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">occupied!</span><span class="w"> </span><span class="s">It</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">good</span><span class="w"> </span><span class="s">practice</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">visualize</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">outcome</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">processing</span><span class="w"> </span><span class="s">step</span><span class="w"> </span><span class="s">(when</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">also</span><span class="w"> </span><span class="s">would</span><span class="w"> </span><span class="s">save</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">data).</span><span class="w"> </span><span class="s">When</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">visualize</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">output</span><span class="w"> </span><span class="s">of</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">processing</span><span class="w"> </span><span class="s">step,</span><span class="w"> </span><span class="s">it</span><span class="w"> </span><span class="s">is</span><span class="w"> </span><span class="s">easy</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">spot</span><span class="w"> </span><span class="s">errors</span><span class="w"> </span><span class="s">as</span><span class="w"> </span><span class="s">they</span><span class="w"> </span><span class="s">occur</span><span class="w"> </span><span class="s">rather</span><span class="w"> </span><span class="s">than</span><span class="w"> </span><span class="s">only</span><span class="w"> </span><span class="s">noticing</span><span class="w"> </span><span class="s">them</span><span class="w"> </span><span class="s">in</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">end</span><span class="w"> </span><span class="s">results—if</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">even</span><span class="w"> </span><span class="s">notice</span><span class="w"> </span><span class="s">them</span><span class="w"> </span><span class="s">at</span><span class="w"> </span><span class="s">all</span><span class="w"> </span><span class="s">by</span><span class="w"> </span><span class="s">then.</span>
+
+##<span class="w"> </span><span class="n">Use</span><span class="w"> </span><span class="n">consistent</span><span class="w"> </span><span class="n">filenames</span>
+<span class="n">Do</span><span class="w"> </span><span class="s">not</span><span class="w"> </span><span class="s">rename</span><span class="w"> </span><span class="s">files</span><span class="w"> </span><span class="s">each</span><span class="w"> </span><span class="s">time</span><span class="w"> </span><span class="s">you</span><span class="w"> </span><span class="s">run</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">analysis.</span><span class="w"> </span><span class="s">Use</span><span class="w"> </span><span class="s">a</span><span class="w"> </span><span class="s">consistent</span><span class="w"> </span><span class="s">way</span><span class="w"> </span><span class="s">to</span><span class="w"> </span><span class="s">easy</span><span class="w"> </span><span class="s">read</span><span class="w"> </span><span class="s">what</span><span class="w"> </span><span class="s">subject,</span><span class="w"> </span><span class="s">session,</span><span class="w"> </span><span class="s">and</span><span class="w"> </span><span class="s">processing</span><span class="w"> </span><span class="s">step</span><span class="w"> </span><span class="s">the</span><span class="w"> </span><span class="s">data</span><span class="w"> </span><span class="s">belongs</span><span class="w"> </span><span class="s">to.</span><span class="w"> </span><span class="s">For</span><span class="w"> </span><span class="s">example,</span><span class="w"> </span><span class="s">output</span><span class="w"> </span><span class="s">files</span><span class="w"> </span><span class="s">from</span><span class="w"> </span><span class="s">an</span><span class="w"> </span><span class="s">analysis</span><span class="w"> </span><span class="s">might</span><span class="w"> </span><span class="s">look</span><span class="w"> </span><span class="s">like</span><span class="w"> </span><span class="s">this:</span>
+
+```<span class="n">bash</span>
+<span class="n">sub01</span><span class="o">-</span><span class="n">raw</span><span class="o">-</span><span class="n">tsss</span><span class="p">.</span><span class="n">fif</span>
+<span class="n">sub01</span><span class="o">-</span><span class="n">raw</span><span class="o">-</span><span class="n">downsampled</span><span class="p">.</span><span class="n">mat</span>
+<span class="n">sub01</span><span class="o">-</span><span class="n">epochs</span><span class="p">.</span><span class="n">mat</span>
+<span class="n">sub01</span><span class="o">-</span><span class="n">tfr</span><span class="p">.</span><span class="n">mat</span>
+<span class="k">...</span>
+</code></pre></div></p>
+<p>Note that each file has the id of the subject (<code>sub01</code>) in all filenames and a string indicating what analysis step it belongs to.</p>
+<h2 id="store-data-separate-by-subject-and-session">Store data separate by subject and session</h2>
+<p>When you have data from multiple subjects resist the temptation to throw all data into one folder. Instead, create a project folder where you have one folder per subjects. And if you have more than one session per subject, you should then have separate sub-folders in the subject folder:</p>
+<div class="highlight"><pre><span></span><code>/home/mikkel/my_project/data/<span class="w"> </span>...
+<span class="w">    </span>./sub01<span class="w"> </span>...
+<span class="w">        </span>./session1<span class="w"> </span>...
+<span class="w">            </span>./sub01-ses1-raw-tsss.fif
+<span class="w">            </span>./sub01-ses1-raw-downsampled.mat
+<span class="w">            </span>./sub01-ses1-epochs.mat
+<span class="w">            </span>./sub01-ses1-tfr.mat
+<span class="w">            </span>...<span class="w"> </span>etc.
+<span class="w">        </span>./session2<span class="w"> </span>...
+<span class="w">            </span>./sub01-ses2-raw-tsss.fif
+<span class="w">            </span>./sub01-ses2-raw-downsampled.mat
+<span class="w">            </span>./sub01-ses2-epochs.mat
+<span class="w">            </span>./sub01-ses2-tfr.mat
+<span class="w">            </span>...<span class="w"> </span>etc.
+<span class="w">    </span>./sub02<span class="w"> </span>...
+<span class="w">    </span>...<span class="w"> </span>etc.
+</code></pre></div>
+<p>When you keep this structure, it is  easy to set up subject specific paths to loop though when processing multiple subjects.</p>
+<p>In the tutorial data, you will find one subject called "NatMEG_0177" with one session called "170424" (the recording date; not the best session name). </p>
+<p>We can then setup subject and recording specific paths as below. The cell array <code>subjects_and_dates</code> can be expanded with more subjects and sessions when needed. You will see these lines of code several times throughout the tutorials.</p>
+<div class="highlight"><pre><span></span><code><span class="c">%% Define subjects and sessions</span>
+<span class="n">subjects_and_dates</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="w">             </span><span class="p">{</span>
+<span class="w">                </span><span class="s">&#39;NatMEG_0177/170424/&#39;</span>
+<span class="w">             </span><span class="p">};</span>
+
+<span class="n">subjects</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="k">...</span>
+<span class="w">            </span><span class="p">{</span>
+<span class="w">                </span><span class="s">&#39;NatMEG_0177&#39;</span>
+<span class="w">            </span><span class="p">};</span>
+
+<span class="n">filenames</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">{</span><span class="k">...</span>
+<span class="w">        </span><span class="s">&#39;tactile_stim_raw_tsss_mc.fif&#39;</span>
+<span class="w">        </span><span class="s">&#39;tactile_stim_raw_tsss_mc-1.fif&#39;</span>
+<span class="w">        </span><span class="s">&#39;tactile_stim_raw_tsss_mc-2.fif&#39;</span>
+<span class="w">            </span><span class="p">};</span>
+</code></pre></div>
+<p>In your scripts, you can then easily loop though several subjects and run the same processing step on all subjects. You also make sure that you always read and save data to the correct folder by generating the paths within the loops, rather than specifying it manually in each script; e.g., like this:</p>
+<div class="highlight"><pre><span></span><code><span class="n">output_path</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="n">meg_path</span><span class="p">,</span><span class="w"> </span><span class="n">subjects_and_dates</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span>
+</code></pre></div>
+<h2 id="specify-paths-and-subject-names-once">Specify paths and subject names once</h2>
+<p>When you run multiple scripts on several subjects and have to go back to redo steps of the analysis you can easily loose track of what files belong to which and when. You might end up with several versions of the same file processed with slightly different options. You want to make sure that when you go on to the next step, you read the correct files. If you change the filenames along the way, it is easy to loose track of which files that are new and old and you are prone to make critical errors</p>
+<p>The best way to avoid such errors is to specify subject id and filenames as few places as possible; ideally only once! This can be done by making a meta-script where you specify filenames and subject id (such as the code snippet above) that you then run in the beginning of each script.</p>
+<h2 id="ask-for-help">Ask for help</h2>
+<p>If you encounter an error or problem that you do not know how to solve, there is a high likelihood that someone else have encountered the exact same problem before you. You might find that the answer has already been answered in an online forum or on one of the many MEG/EEG mailing list. Simply starting with googling the error message or the issue you are uncertain about often gives you the solution you need.</p>
+<p>There are also a lot of good resources for tips and tricks on MEG/EEG analysis. The MEG/EEG community is very open and helpful. Not only are the major analysis toolboxes open-source (which mean you can use it freely and even contribute yourself), they all have mailing lists that you can sign up for and ask for help from MEG/EEG scientists around the world. They tend to be quick to reply and friendly. Do not be afraid to ask for help!</p>
+<hr />
+<p>[^1]: van Vliet, M. (2020). Seven quick tips for analysis scripts in neuroimaging. <em>PLOS Computational Biology</em>, <em>16</em>(3), e1007358. https://doi.org/10.1371/journal.pcbi.1007358van</p>
+<p>[^2]: <a href="https://bids.neuroimaging.io/">The Brain Imaging Data Structure (BIDS)</a> is an initiative to standardize how neuroimaging data is stored to allow easy sharing of data across research groups and sites. Originally BIDS was for sharing MRI data but has since been expanded for MEG (and by extension EEG). Niso, G., Gorgolewski, K. J., Bock, E., Brooks, T. L., Flandin, G., Gramfort, A., Henson, R. N., Jas, M., Litvak, V., T. Moreau, J., Oostenveld, R., Schoffelen, J.-M., Tadel, F., Wexler, J., &amp; Baillet, S. (2018). <a href="https://doi.org/10.1038/sdata.2018.110">MEG-BIDS, the brain imaging data structure extended to magnetoencephalography</a>. <em>Scientific Data, 5(1)</em>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.view", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
